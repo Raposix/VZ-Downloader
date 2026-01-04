@@ -62,6 +62,8 @@ if (hoje.day == 31 and hoje.month == 12) or (hoje.day == 1 and hoje.month == 1):
 if hoje.day == 25 and hoje.month == 12:
     print("🎅 MERRY CHRISTMAS!")
 
+print("se precisar de ajuda, digite (?)")
+
 print("\nFormatos disponíveis:")
 print("1. MP4")
 print("2. MP3")
@@ -92,13 +94,15 @@ ____________  _______   __ ______ _____ _   _
     print("\n" + "="*70)
     print("VZDownloader Legacy - Release 1.1 (01/01/2026)")
     print("="*70)
-    print("\nDesenvolvido por: [Seu Nome]")
-    print("GitHub: [Seu GitHub]")
-    print("Descrição: Downloader de vídeos do YouTube com interface amigável")
+    print("\nDesenvolvido por: @raposix on yt")
+    print("GitHub: Raposix")
+    print("Descrição: Downloader de vídeos do YouTube com interface em cmd")
     print("\nTecnologias: Python, yt-dlp, tkinter")
     print("="*70)
     input("\nPressione ENTER para continuar...")
     sys.exit()
+
+    
 
 url = input("Cole a URL do vídeo do YouTube: ")
 
@@ -148,6 +152,16 @@ elif opcao == "5":
     if not ext.startswith("."):
         ext = "." + ext
     formato_cmd = ['--recode-video', ext.replace(".", "")]
+
+elif opcao == "?":
+    print("Como usar o programa?")
+    print("Primeiro, digite o número correspondente ao formato de vídeo que queira baixar")
+    print("Depois, insira a URL do vídeo que queira baixar no seu pc")
+    print("Logo depois, selecione a pasta que queira baixar o vídeo e o nome do arquivo")
+    print("Pronto! Vídeo baixado com sucesso!")
+
+input("\nPressione ENTER para sair...")
+sys.exit()
 
 else:
     print("Opção inválida.")
@@ -199,4 +213,5 @@ print(f"📁 Arquivo salvo em:\n{nome_final}")
 print("Obrigado por usar o VZDownloader! Volte sempre! 😊")
 
 # Pausa para manter o terminal aberto
+
 input("\n🔵 Pressione ENTER para fechar...")
