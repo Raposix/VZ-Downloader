@@ -6,3 +6,5 @@ A VZ Team não se responsabiliza a questão de copyright, somos apenas um baixad
 
 [![GitHub Profile](https://img.shields.io/badge/GitHub-Raposix-24292F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Raposix)
 [![YouTube](https://img.shields.io/badge/YouTube-Canal-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@raposix)
+[![Discord](https://img.shields.io/badge/Discord-Perfil-5865F2?logo=discord&logoColor=white)](https://discord.com/users/675792435972014120)
+
