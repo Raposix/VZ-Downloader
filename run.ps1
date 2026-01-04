@@ -1,15 +1,23 @@
-# Pasta temporária
-$temp = "$env:TEMP\VZ-Downloader"
-if (-Not (Test-Path $temp)) { New-Item -ItemType Directory -Path $temp }
+# Pasta fixa para o repositório
+$folder = "C:\VZ-Downloader"
 
-# URLs dos arquivos Python
-$installerUrl = "https://raw.githubusercontent.com/Raposix/VZ-Downloader/main/installer.py"
-$appUrl       = "https://raw.githubusercontent.com/Raposix/VZ-Downloader/main/app.py"
+# Se a pasta não existir, baixa e descompacta o repositório
+if (-Not (Test-Path $folder)) {
+    Write-Host "Baixando VZ-Downloader..."
+    $zip = "$env:TEMP\VZ-Downloader.zip"
+    Invoke-WebRequest -Uri "https://github.com/Raposix/VZ-Downloader/archive/refs/heads/main.zip" -OutFile $zip
+    Expand-Archive -Path $zip -DestinationPath "C:\"
+    Rename-Item "C:\VZ-Downloader-main" "C:\VZ-Downloader"
+    Remove-Item $zip
+}
 
-# Baixa os arquivos
-Invoke-WebRequest -Uri $installerUrl -OutFile "$temp\installer.py"
-Invoke-WebRequest -Uri $appUrl -OutFile "$temp\app.py"
+# Vai para a pasta do repositório
+Set-Location $folder
 
-# Roda os scripts na ordem
-python "$temp\installer.py"
-python "$temp\app.py"
+# Roda o installer
+Write-Host "Rodando installer.py..."
+py -3 installer.py
+
+# Roda o app
+Write-Host "Rodando app.py..."
+py -3 app.py
